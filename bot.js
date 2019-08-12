@@ -43,17 +43,13 @@ client.on("message", (message) => {
   if (message.content.startsWith(config.prefix + "test")) {
     message.channel.send("I'm still alive bitch");
   } else
-
-  if (message.content.startsWith(config.prefix + "avatar") 
-  if (!message.mentions.users.size) {
-    return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
-  }
-  const avatarList = message.mentions.users.map(user => {
-  return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
-  });
-
-      message.channel.send(avatarList);
-    }
+ if (message.content.startsWith(config.prefix + 'avatar')) {
+    const user = message.mentions.users.first() || message.author;
+    const avatarEmbed = new Discord.RichEmbed()
+        .setColor(0x333333)
+        .setAuthor(user.username)
+        .setImage(user.avatarURL);
+    message.channel.send(avatarEmbed);
   } else
   if (message.content.startsWith(config.prefix + "Is SOM gay?")) {
     message.channel.send("Yeah he's a massive goy");
