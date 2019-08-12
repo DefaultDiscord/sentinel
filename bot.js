@@ -37,6 +37,14 @@ client.on('messageDelete', message => {
 client.on("message", (message) => {
   // check for bot author/prefix
 
+  // complex commands
+
+  client.on('message', message => {
+    if (message.content === 'avatar') {
+      message.reply(message.author.avatarURL);
+    }
+  });
+
   //text commands
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
