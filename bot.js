@@ -36,11 +36,15 @@ client.on('messageDelete', message => {
 
 client.on("message", (message) => {
 
-      //complex commands
 
+  //text commands
+  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+
+  if (message.content.startsWith(config.prefix + "test")) {
+    message.channel.send("I'm still alive bitch");
+  } else
   //avatar command
 
-  client.on('message', message => {
 if (message.content.startsWith(config.prefix + "avatar") {
 if (!message.mentions.users.size) {
 
@@ -50,15 +54,8 @@ const avatarList = message.mentions.users.map(user => {
 return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
 });
 
-message.channel.send(avatarList);
-}
-}
-
-  //text commands
-  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
-
-  if (message.content.startsWith(config.prefix + "test")) {
-    message.channel.send("I'm still alive bitch");
+      message.channel.send(avatarList);
+    }
   } else
   if (message.content.startsWith(config.prefix + "Is SOM gay?")) {
     message.channel.send("Yeah he's a massive goy");
