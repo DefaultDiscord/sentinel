@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const config = require("./config.json")
 const token = process.env.token();
 
-//startup / event handlers
+//startup event handlers
 
 client.on('ready', function() {
     console.log('Status loaded..');
