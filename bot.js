@@ -37,22 +37,20 @@ client.on('messageDelete', message => {
 client.on("message", (message) => {
 
 
-  //text commands
+  //bot check
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
   if (message.content.startsWith(config.prefix + "test")) {
     message.channel.send("I'm still alive bitch");
   } else
-  //avatar command
 
-if (message.content.startsWith(config.prefix + "avatar") {
-if (!message.mentions.users.size) {
-
-return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
-}
-const avatarList = message.mentions.users.map(user => {
-return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
-});
+  if (message.content.startsWith(config.prefix + "avatar") 
+  if (!message.mentions.users.size) {
+    return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
+  }
+  const avatarList = message.mentions.users.map(user => {
+  return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
+  });
 
       message.channel.send(avatarList);
     }
