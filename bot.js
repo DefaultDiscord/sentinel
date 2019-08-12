@@ -35,17 +35,30 @@ client.on('messageDelete', message => {
 });
 
 client.on("message", (message) => {
-  // check for bot author/prefix
 
+      //complex commands
+
+  //avatar command
+
+  client.on('message', message => {
+if (message.content.startsWith(config.prefix + "avatar") {
+if (!message.mentions.users.size) {
+
+return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
+}
+const avatarList = message.mentions.users.map(user => {
+return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
+});
+
+message.channel.send(avatarList);
+}
+}
 
   //text commands
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
   if (message.content.startsWith(config.prefix + "test")) {
     message.channel.send("I'm still alive bitch");
-  } else
-  if (message.content.startsWith(config.prefix + "avatar")) {
-    message.reply(message.author.avatarURL);
   } else
   if (message.content.startsWith(config.prefix + "Is SOM gay?")) {
     message.channel.send("Yeah he's a massive goy");
