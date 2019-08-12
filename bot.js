@@ -63,8 +63,6 @@ client.on("message", (message) => {
 
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(token);
 
-function formatConsoleMessage(message) {
-    return message.cleanContent.replace(new RegExp('\n', 'g'), '\n\t');
 }
