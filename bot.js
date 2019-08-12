@@ -54,6 +54,12 @@ client.on("message", (message) => {
   if (message.content.startsWith(config.prefix + "Is SOM gay?")) {
     message.channel.send("Yeah he's a massive goy");
   } else
+  if (message.content.startsWith(config.prefix + "Is Legit gay?")) {
+    message.channel.send("No, but he is obese and has diabetes");
+  } else
+  if (message.content.startsWith(config.prefix + "Is Cladri gay?")) {
+    message.channel.send("Yes he likes hentai traps #bibleblack");
+  } else
   if (message.content.startsWith(config.prefix + "Is Iiro gay?")) {
     message.channel.send("Yeah he's a massive goy");
   } else
