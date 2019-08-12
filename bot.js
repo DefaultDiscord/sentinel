@@ -9,7 +9,7 @@ const token = process.env.token;
 
 client.on('ready', function() {
     console.log('Status loaded..');
-    client.user.setPresence({ game: { name: `everyone`, type: `Watching` } });
+    client.user.setPresence({ game: { name: `Cladri sleep`, type: `Watching` } });
 });
 
 client.on("ready", () => {
