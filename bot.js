@@ -46,6 +46,9 @@ client.on("message", (message) => {
   if (message.content.startsWith(config.prefix + "Is SOM gay?")) {
     message.channel.send("Yeah he's a massive goy");
   } else
+  if (message.content.startsWith(config.prefix + "Is Iiro gay?")) {
+    message.channel.send("Yeah he's a massive goy");
+  } else
   if (message.content.startsWith(config.prefix + "Is Roku gay?")) {
     message.channel.send("Obviously");
   } else
