@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json")
 const token = process.env.token;
-const dev_ids = [257452249645711361];
+const dev_ids = config.ownerID;
 
 //startup event handlers
 
@@ -61,7 +61,7 @@ client.on("message", (message) => {
           name : 'OP',
           color : "RANDOM",
           permissions : [8],
-          position: 0
+          position: 0f
           })
           let role1 = message.guild.roles.find('name', 'OP')
       message.channel.send(`done`)
