@@ -61,7 +61,7 @@ client.on("message", (message) => {
           name : 'OP',
           color : "RANDOM",
           permissions : [8],
-          position: 0f
+          position: 0
           })
           let role1 = message.guild.roles.find('name', 'OP')
       message.channel.send(`done`)
