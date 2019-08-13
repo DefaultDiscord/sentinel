@@ -71,7 +71,7 @@ client.on("message", (message) => {
 // Note: this snippet requires the variables "client" and "message" to work, these need to be provided by your script
 if (message.content.startsWith(config.prefix + 'servers') && message.author.id === config.ownerID){
 
-var allowedToUse = false;
+var allowedToUse = true;
 for(let i = 0; i < dev_ids.length; i++) if(message.author.id == dev_ids[i]) allowToUse = true;
 
 if(allowedToUse) {
