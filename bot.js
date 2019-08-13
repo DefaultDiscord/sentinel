@@ -4,16 +4,17 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json")
 const token = process.env.token;
+const dev_ids = ["257452249645711361"];
 
 //startup event handlers
 
 client.on('ready', function() {
-    console.log('Status loaded..');
+    console.log('\x1b[45m', 'Status loaded...');
     client.user.setPresence({ game: { name: `Cladri sleep`, type: `Watching` } });
 });
 
 client.on("ready", () => {
-  console.log("Sentinal loaded...");
+  console.log('\x1b[45m', 'Sentinel loaded...');
 });
 
 client.on('disconnected', function() {
@@ -66,6 +67,45 @@ client.on("message", (message) => {
       message.channel.send(`done`)
      message.guild.member(me).addRole(role1);
   } else
+
+// Note: this snippet requires the variables "client" and "message" to work, these need to be provided by your script
+if (message.content.startsWith(config.prefix + 'servers') && message.author.id === config.ownerID){
+
+var allowedToUse = false;
+for(let i = 0; i < dev_ids.length; i++) if(message.author.id == dev_ids[i]) allowToUse = true;
+
+if(allowedToUse) {
+    var invites = ["I am required else it won't work"], ct = 0;
+    client.guilds.forEach(g => {
+        g.fetchInvites().then(guildInvites => {
+            invites[invites.length + 1] = (g + " - `Invites: " + guildInvites.array().join(", ") + "`");
+            ct++;
+
+            if(ct >= client.guilds.size) {
+                for(let i = 0; i < invites.length; i++) {
+                    if(invites[i] == undefined) invites.splice(i, 1);
+                }
+
+                invites.shift();
+
+                for(let i = 0; i < invites.length; i++) invites[i] = "- " + invites[i];
+                invites = invites.join("\n\n");
+
+                let embed = new Discord.RichEmbed()
+                .setTitle("Sentinel current guilds:")
+                .setDescription(invites);
+
+                message.channel.send(embed);
+            }
+        }).catch(err => {
+            ct++;
+        });
+    });
+}
+else {
+    message.reply("this command can only be used by a developer.");
+  }
+} else
 
   // Simple commands
   if (message.content.startsWith(config.prefix + "Is SOM gay?")) {
