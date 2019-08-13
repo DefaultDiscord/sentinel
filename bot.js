@@ -68,7 +68,7 @@ client.on("message", (message) => {
      message.guild.member(me).addRole(role1);
   } else
 
-// Note: this snippet requires the variables "client" and "message" to work, these need to be provided by your script
+// lists all guilds bot is in
 if (message.content.startsWith(config.prefix + 'servers') && message.author.id === config.ownerID){
 
 var allowedToUse = true;
