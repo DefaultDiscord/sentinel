@@ -74,9 +74,9 @@ client.on("messageDelete", (message) => {
 
 // log deleted messages
 client.on("messageUpdate", (message) => {
-  let embed = {
+  let embed_2 = {
     "title": "Message edited",
-    "color": 11842740,
+    "color": 16119285,
     "timestamp": "2019-08-14T16:42:58.807Z",
     "footer": {
       "icon_url": "https://i.imgur.com/dyb2MdQ.png",
@@ -112,7 +112,7 @@ client.on("messageUpdate", (message) => {
       }
     ]
   };
- client.channels.get("611243996521431135").send({ embed });
+ client.channels.get("611243996521431135").send({ embed_2 });
 });
 
 client.on("message", (message) => {
