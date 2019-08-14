@@ -35,7 +35,7 @@ client.on('error', function(err) {
 
 // log deleted messages
 client.on("messageDelete", (message) => {
-  const deletedEmbed = {
+  const embed = {
     "title": "Message deleted",
     "color": 11842740,
     "timestamp": "2019-08-14T16:42:58.807Z",
@@ -69,7 +69,7 @@ client.on("messageDelete", (message) => {
       }
     ]
   };
- client.channels.get("611243996521431135").send({ DeletedEmbed });
+ client.channels.get("611243996521431135").send({ embed });
 });
 
 
