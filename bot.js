@@ -33,48 +33,11 @@ client.on('error', function(err) {
     process.exit(1);
 });
 
-// log deleted messages
-client.on("messageDelete", (message) => {
-  const embed = {
-    "title": "Message deleted",
-    "color": 11842740,
-    "timestamp": "2019-08-14T16:42:58.807Z",
-    "footer": {
-      "icon_url": "https://i.imgur.com/dyb2MdQ.png",
-      "text": "sentinel logging"
-    },
-    "thumbnail": {
-      "url": "https://i.imgur.com/dyb2MdQ.png"
-    },
-    "fields": [
-      {
-        "name": "Message content",
-        "value": `${message.content}`
-      },
-      {
-        "name": "Date/time",
-        "value": `${new Date()}`
-      },
-      {
-        "name": "User",
-        "value": `${message.author.tag}`
-      },
-      {
-        "name": "Channel",
-        "value": `${message.channel.name}`
-      },
-      {
-        "name": "Guild",
-        "value": `${message.guild.name}`
-      }
-    ]
-  };
- client.channels.get("611243996521431135").send({ embed });
-});
+
 
 // log edited messages
 client.on("messageUpdate", (message) => {
-  const embed1 = {
+  const editedEmbed = {
     "title": "Message edited",
     "color": 16250871,
     "timestamp": "2019-08-14T16:42:58.807Z",
@@ -112,7 +75,7 @@ client.on("messageUpdate", (message) => {
       }
     ]
   };
- client.channels.get("611243996521431135").send({ embed1 });
+ client.channels.get("611243996521431135").send({ editedEmbed });
 });
 
 client.on("message", (message) => {
