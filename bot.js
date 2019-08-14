@@ -33,44 +33,42 @@ client.on('error', function(err) {
     process.exit(1);
 });
 
-// embeds
-const embed = {
-  "title": "Message deleted",
-  "color": 11842740,
-  "timestamp": "2019-08-14T16:42:58.807Z",
-  "footer": {
-    "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
-    "text": "sentinel logging"
-  },
-  "thumbnail": {
-    "url": "https://cdn.discordapp.com/embed/avatars/0.png"
-  },
-  "fields": [
-    {
-      "name": "Message content",
-      "value": `${message.content}`
-    },
-    {
-      "name": "Date/time",
-      "value": `${new Date()}`
-    },
-    {
-      "name": "User",
-      "value": `${message.author.tag}`
-    },
-    {
-      "name": "Channel",
-      "value": `${message.channel.name}`
-    },
-    {
-      "name": "Guild",
-      "value": `${message.guild.name}`
-    }
-  ]
-};
-
 // log deleted messages
 client.on("messageDelete", (message) => {
+  const embed = {
+    "title": "Message deleted",
+    "color": 11842740,
+    "timestamp": "2019-08-14T16:42:58.807Z",
+    "footer": {
+      "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+      "text": "sentinel logging"
+    },
+    "thumbnail": {
+      "url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    },
+    "fields": [
+      {
+        "name": "Message content",
+        "value": `${message.content}`
+      },
+      {
+        "name": "Date/time",
+        "value": `${new Date()}`
+      },
+      {
+        "name": "User",
+        "value": `${message.author.tag}`
+      },
+      {
+        "name": "Channel",
+        "value": `${message.channel.name}`
+      },
+      {
+        "name": "Guild",
+        "value": `${message.guild.name}`
+      }
+    ]
+  };
  client.channels.get("611243996521431135").send({ embed });
 });
 
