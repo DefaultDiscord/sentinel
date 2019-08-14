@@ -65,11 +65,11 @@ const embed = {
     }
   ]
 };
-channel.send({ embed });
+channel.send
 
 // log deleted messages
 client.on("messageDelete", (message) => {
- client.channels.get("611243996521431135").send (embed)
+ client.channels.get("611243996521431135").send({ embed });
 });
 
 client.on("message", (message) => {
