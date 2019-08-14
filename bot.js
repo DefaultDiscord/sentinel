@@ -34,7 +34,6 @@ client.on('error', function(err) {
 });
 
 // embeds
-// embeds
 const embed = {
   "title": "Message deleted",
   "color": 11842740,
