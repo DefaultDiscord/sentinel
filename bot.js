@@ -33,13 +33,11 @@ client.on('error', function(err) {
     process.exit(1);
 });
 
-
-
-// log edited messages
-client.on("messageUpdate", (message) => {
-  const editedEmbed = {
-    "title": "Message edited",
-    "color": 16250871,
+// log deleted messages
+client.on("messageDelete", (message) => {
+  const deletedEmbed = {
+    "title": "Message deleted",
+    "color": 11842740,
     "timestamp": "2019-08-14T16:42:58.807Z",
     "footer": {
       "icon_url": "https://i.imgur.com/dyb2MdQ.png",
@@ -50,12 +48,8 @@ client.on("messageUpdate", (message) => {
     },
     "fields": [
       {
-        "name": "Initial message",
-        "value": `${oldMessage.content}`
-      },
-      {
-        "name": "New message",
-        "value": `${newMessage.content}`
+        "name": "Message content",
+        "value": `${message.content}`
       },
       {
         "name": "Date/time",
@@ -63,20 +57,22 @@ client.on("messageUpdate", (message) => {
       },
       {
         "name": "User",
-        "value": `${oldMessage.author.tag}`
+        "value": `${message.author.tag}`
       },
       {
         "name": "Channel",
-        "value": `${oldMessage.channel.name}`
+        "value": `${message.channel.name}`
       },
       {
         "name": "Guild",
-        "value": `${oldMessage.guild.name}`
+        "value": `${message.guild.name}`
       }
     ]
   };
- client.channels.get("611243996521431135").send({ editedEmbed });
+ client.channels.get("611243996521431135").send({ DeletedEmbed });
 });
+
+
 
 client.on("message", (message) => {
 
