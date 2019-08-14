@@ -40,11 +40,11 @@ client.on("messageDelete", (message) => {
     "color": 11842740,
     "timestamp": "2019-08-14T16:42:58.807Z",
     "footer": {
-      "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+      "icon_url": "https://i.imgur.com/dyb2MdQ.png",
       "text": "sentinel logging"
     },
     "thumbnail": {
-      "url": "https://cdn.discordapp.com/embed/avatars/0.png"
+      "url": "https://i.imgur.com/dyb2MdQ.png"
     },
     "fields": [
       {
@@ -70,6 +70,49 @@ client.on("messageDelete", (message) => {
     ]
   };
  client.channels.get("611243996521431135").send({ embed });
+});
+
+// log edited messages
+client.on("messageUpdate", (message) => {
+  const embed1 = {
+    "title": "Message edited",
+    "color": 16250871,
+    "timestamp": "2019-08-14T16:42:58.807Z",
+    "footer": {
+      "icon_url": "https://i.imgur.com/dyb2MdQ.png",
+      "text": "sentinel logging"
+    },
+    "thumbnail": {
+      "url": "https://i.imgur.com/dyb2MdQ.png"
+    },
+    "fields": [
+      {
+        "name": "Initial message",
+        "value": `${message.oldMessage}`
+      },
+      {
+        "name": "New message",
+        "value": `${message.newMessage}`
+      },
+      {
+        "name": "Date/time",
+        "value": `${new Date()}`
+      },
+      {
+        "name": "User",
+        "value": `${message.author.tag}`
+      },
+      {
+        "name": "Channel",
+        "value": `${message.channel.name}`
+      },
+      {
+        "name": "Guild",
+        "value": `${message.guild.name}`
+      }
+    ]
+  };
+ client.channels.get("611243996521431135").send({ embed1 });
 });
 
 client.on("message", (message) => {
