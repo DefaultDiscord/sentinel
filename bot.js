@@ -88,11 +88,11 @@ client.on("messageUpdate", (message) => {
     "fields": [
       {
         "name": "Initial message",
-        "value": `${message.oldMessage}`
+        "value": `${oldMessage}`
       },
       {
         "name": "New message",
-        "value": `${message.newMessage}`
+        "value": `${newMessage}`
       },
       {
         "name": "Date/time",
