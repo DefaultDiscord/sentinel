@@ -88,11 +88,11 @@ client.on("messageUpdate", (message) => {
     "fields": [
       {
         "name": "Initial message",
-        "value": `${oldMessage}`
+        "value": `${oldMessage.content}`
       },
       {
         "name": "New message",
-        "value": `${newMessage}`
+        "value": `${newMessage.content}`
       },
       {
         "name": "Date/time",
@@ -100,15 +100,15 @@ client.on("messageUpdate", (message) => {
       },
       {
         "name": "User",
-        "value": `${message.author.tag}`
+        "value": `${oldMessage.author.tag}`
       },
       {
         "name": "Channel",
-        "value": `${message.channel.name}`
+        "value": `${oldMessage.channel.name}`
       },
       {
         "name": "Guild",
-        "value": `${message.guild.name}`
+        "value": `${oldMessage.guild.name}`
       }
     ]
   };
