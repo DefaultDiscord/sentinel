@@ -65,7 +65,6 @@ const embed = {
     }
   ]
 };
-channel.send
 
 // log deleted messages
 client.on("messageDelete", (message) => {
