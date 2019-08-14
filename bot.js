@@ -36,7 +36,7 @@ client.on('error', function(err) {
 
 // log deleted messages
 client.on("messageDelete", (messageDelete) => {
- client.channels.get("611243996521431135").send (`**Message : "${messageDelete.content}" by ${messageDelete.author.tag} was deleted in channel ${message.channel.name} on server ${guild.name} at ${new Date()}.**`)
+ client.channels.get("611243996521431135").send (`**Message : "${messageDelete.content}" by ${messageDelete.author.tag} was deleted in channel ${message.channel.name} on server ${message.guild.name} at ${new Date()}.**`)
 });
 
 client.on("message", (message) => {
