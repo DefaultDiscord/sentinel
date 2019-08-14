@@ -35,7 +35,7 @@ client.on('error', function(err) {
 
 // log deleted messages
 client.on("messageDelete", (message) => {
-  const embed = {
+  let embed = {
     "title": "Message deleted",
     "color": 11842740,
     "timestamp": "2019-08-14T16:42:58.807Z",
