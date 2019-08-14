@@ -135,11 +135,11 @@ client.on("guildMemberRemove", (message) => {
       },
       {
         "name": "User",
-        "value": `${message.author.tag}`
+        "value": `${{member.tag}`
       },
       {
         "name": "Guild",
-        "value": `${message.guild.name}`
+        "value": `${guild.name}`
       }
     ]
   };
@@ -166,11 +166,11 @@ client.on("guildBanAdd", (message) => {
       },
       {
         "name": "User",
-        "value": `${message.author.tag}`
+        "value": `${member.tag}`
       },
       {
         "name": "Guild",
-        "value": `${message.guild.name}`
+        "value": `${guild.name}`
       }
     ]
   };
