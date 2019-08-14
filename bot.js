@@ -115,68 +115,6 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
  client.channels.get("611243996521431135").send({ embed_2 });
 });
 
-// log kicked users
-client.on("guildMemberRemove", (message) => {
-  let embed_3 = {
-    "title": "User was kicked",
-    "color": 14876416,
-    "timestamp": "2019-08-14T16:42:58.807Z",
-    "footer": {
-      "icon_url": "https://i.imgur.com/dyb2MdQ.png",
-      "text": "sentinel logging"
-    },
-    "thumbnail": {
-      "url": "https://i.imgur.com/dyb2MdQ.png"
-    },
-    "fields": [
-      {
-        "name": "Date/time",
-        "value": `${new Date()}`
-      },
-      {
-        "name": "User",
-        "value": `${{member.tag}`
-      },
-      {
-        "name": "Guild",
-        "value": `${guild.name}`
-      }
-    ]
-  };
- client.channels.get("611243996521431135").send({ embed_3 });
-});
-
-// log banned added
-client.on("guildBanAdd", (message) => {
-  let embed_4 = {
-    "title": "User was banned",
-    "color": 16711680,
-    "timestamp": "2019-08-14T16:42:58.807Z",
-    "footer": {
-      "icon_url": "https://i.imgur.com/dyb2MdQ.png",
-      "text": "sentinel logging"
-    },
-    "thumbnail": {
-      "url": "https://i.imgur.com/dyb2MdQ.png"
-    },
-    "fields": [
-      {
-        "name": "Date/time",
-        "value": `${new Date()}`
-      },
-      {
-        "name": "User",
-        "value": `${member.tag}`
-      },
-      {
-        "name": "Guild",
-        "value": `${guild.name}`
-      }
-    ]
-  };
- client.channels.get("611243996521431135").send({ embed_4 });
-});
-
 client.on("message", (message) => {
 
   // bot check
