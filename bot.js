@@ -73,7 +73,7 @@ client.on("messageDelete", (message) => {
 });
 
 // log deleted messages
-client.on("messageUpdate", (message) => {
+client.on("messageUpdate", (oldMessage, newMessage) => {
   let embed_2 = {
     "title": "Message edited",
     "color": 16119285,
