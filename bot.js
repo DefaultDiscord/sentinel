@@ -36,9 +36,8 @@ client.on('error', function(err) {
 // embeds
 const embed = {
   "title": "Message deleted",
-  "description": "${message.content}",
   "color": 11842740,
-  "timestamp": "${new Date()}",
+  "timestamp": "2019-08-14T16:42:58.807Z",
   "footer": {
     "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
     "text": "sentinel logging"
@@ -48,20 +47,24 @@ const embed = {
   },
   "fields": [
     {
+      "name": "Message content",
+      "value": `${message.content}`
+    },
+    {
       "name": "Date/time",
-      "value": "${new Date()}"
+      "value": `${new Date()}`
     },
     {
       "name": "User",
-      "value": "${message.author.tag}"
+      "value": `${message.author.tag}`
     },
     {
       "name": "Channel",
-      "value": "${message.channel.name}"
+      "value": `${message.channel.name}`
     },
     {
       "name": "Guild",
-      "value": "${message.guild.name}"
+      "value": `${message.guild.name}`
     }
   ]
 };
