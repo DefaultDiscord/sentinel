@@ -9,7 +9,7 @@ var Game = 'everyone'
 var Type = 'Watching'
 
 
-//startup event handlers
+//startup and event handlers
 
 client.on('ready', function() {
     console.log('\x1b[35m', 'Status loaded...');
@@ -33,22 +33,41 @@ client.on('error', function(err) {
     process.exit(1);
 });
 
-client.on('messageDelete', message => {
-  console.log(`message "${message.cleanContent}" was deleted from channel: ${message.channel.name} at ${new Date()}`);
-  client.channels.get("610326108830826528").send(`message "${message.cleanContent}" has been deleted at ${new Date()}`)
+
+// log deleted messages
+client.on('messageDelete', async (message) => {
+  const logs = message.guild.channels.find(channel => channel.name === "sentinel");
+  if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) {
+    message.guild.createChannel('sentinel', 'text');
+  }
+  if (!message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) {
+    console.log('The logs channel does not exist and tried to create the channel but I am lacking permissions')
+  }
+  const entry = await message.guild.fetchAuditLogs({type: 'MESSAGE_DELETE'}).then(audit => audit.entries.first())
+  let user = ""
+    if (entry.extra.channel.id === message.channel.id
+      && (entry.target.id === message.author.id)
+      && (entry.createdTimestamp > (Date.now() - 5000))
+      && (entry.extra.count >= 1)) {
+    user = entry.executor.username
+  } else {
+    user = message.author.username
+  }
+  logs.send(`Message deleted in ${message.channel.name} in server ${helpmelol} by ${user}`);
 });
 
 client.on("message", (message) => {
 
-
-  //bot check
+  // bot check
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
-  //avatar command
+  // test if alive
   if (message.content.startsWith(config.prefix + "test")) {
     message.channel.send("I'm still alive bitch");
   } else
- if (message.content.startsWith(config.prefix + 'avatar')) {
+
+  // grab user avatar
+  if (message.content.startsWith(config.prefix + 'avatar')) {
     const user = message.mentions.users.first() || message.author;
     const avatarEmbed = new Discord.RichEmbed()
         .setColor(0x333333)
@@ -98,7 +117,7 @@ if(allowedToUse) {
                 for(let i = 0; i < invites.length; i++) invites[i] = "- " + invites[i];
                 invites = invites.join("\n\n");
                 let embed = new Discord.RichEmbed()
-                .setTitle("Sentinel current guilds:")
+                .setTitle("Sentinel: current guilds:")
                 .setDescription(invites);
                 message.channel.send(embed);
             }
@@ -133,6 +152,9 @@ else {
   } else
   if (message.content.startsWith(config.prefix + "Is Nick gay?")) {
     message.channel.send("Simply the gayest");
+  } else
+  if (message.content.startsWith(config.prefix + "Is Default gay?")) {
+    message.channel.send("no");
   } else
   if (message.content.startsWith(config.prefix + 'owner') && message.author.id === config.ownerID){
     message.channel.send("Default#9672");
