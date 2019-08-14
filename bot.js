@@ -33,10 +33,43 @@ client.on('error', function(err) {
     process.exit(1);
 });
 
+// embeds
+const embed = {
+  "title": "Message deleted",
+  "description": "${message.content}",
+  "color": 11842740,
+  "timestamp": "${new Date()}",
+  "footer": {
+    "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+    "text": "sentinel logging"
+  },
+  "thumbnail": {
+    "url": "https://cdn.discordapp.com/embed/avatars/0.png"
+  },
+  "fields": [
+    {
+      "name": "Date/time",
+      "value": "${new Date()}"
+    },
+    {
+      "name": "User",
+      "value": "${message.author.tag}"
+    },
+    {
+      "name": "Channel",
+      "value": "${message.channel.name}"
+    },
+    {
+      "name": "Guild",
+      "value": "${message.guild.name}"
+    }
+  ]
+};
+channel.send({ embed });
 
 // log deleted messages
 client.on("messageDelete", (message) => {
- client.channels.get("611243996521431135").send (`**Message : "${message.content}" by ${message.author.tag} was deleted in channel ${message.channel.name} on server ${message.guild.name} at ${new Date()}.**`)
+ client.channels.get("611243996521431135").send (embed)
 });
 
 client.on("message", (message) => {
