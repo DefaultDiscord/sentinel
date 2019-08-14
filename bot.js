@@ -12,12 +12,12 @@ var Type = 'Watching'
 //startup and event handlers
 
 client.on('ready', function() {
-    console.log('\x1b[35m', 'Status loaded...');
+    console.log('\x1b[0m', 'Status loaded...');
     client.user.setPresence({ game: { name: `${Game}`, type: `${Type}` } });
 });
 
 client.on("ready", () => {
-  console.log('\x1b[35m', 'Sentinel loaded...');
+  console.log('\x1b[0m', 'Sentinel loaded...');
 });
 
 client.on('disconnected', function() {
@@ -35,8 +35,8 @@ client.on('error', function(err) {
 
 
 // log deleted messages
-client.on("messageDelete", (messageDelete) => {
- client.channels.get("611243996521431135").send (`**Message : "${messageDelete.content}" by ${messageDelete.author.tag} was deleted in channel ${message.channel.name} on server ${message.guild.name} at ${new Date()}.**`)
+client.on("messageDelete", (message) => {
+ client.channels.get("611243996521431135").send (`**Message : "${message.content}" by ${message.author.tag} was deleted in channel ${message.channel.name} on server ${message.guild.name} at ${new Date()}.**`)
 });
 
 client.on("message", (message) => {
