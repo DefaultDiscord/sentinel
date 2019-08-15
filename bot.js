@@ -43,7 +43,7 @@ client.on("ready", function(){
 
 // log deleted messages
 client.on("messageDelete", (message) => {
-  const embed1 = new Discord.RichEmbed({
+  const embed = new Discord.RichEmbed({
     "title": "Message deleted",
     "color": 11842740,
     "timestamp": "2019-08-14T16:42:58.807Z",
@@ -77,7 +77,7 @@ client.on("messageDelete", (message) => {
       }
     ]
   });
- client.channels.get("611243996521431135").send({ embed1 });
+ client.channels.get("611243996521431135").send({ embed });
 });
 
 //message log code goes here morgan
@@ -189,7 +189,7 @@ else {
     message.channel.send("Default#9672");
   } else
   if (message.content.startsWith(config.prefix + 'credits')) {
-  const embed2 = new Discord.RichEmbed({
+  const embed = new Discord.RichEmbed({
   "title": "SENTINEL DISCORD BOT",
   "description": "A list of the people who've either directly contributed and helped this bots developmet, or have been supportive and/or tested this bot during it's early days. ```\nThank you.```",
   "url": "https://github.com/DefaultDiscord/sentinel",
@@ -234,7 +234,7 @@ else {
     }
   ]
 });
-message.channel.send({ embed2 });
+message.channel.send({ embed });
    } else
   if (message.content.startsWith(config.prefix + 'endgamespoilers')) {
     message.channel.send("He's here. . .", {
