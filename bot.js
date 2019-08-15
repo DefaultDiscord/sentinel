@@ -140,7 +140,7 @@ client.on("guildMemberRemove", (message, guild, user, member, tag) => {
     "fields": [
       {
         "name": "Date/time",
-        "value": `${new Date()}`
+        "value": `${member.user.tag} | ${member.user.id}`
       },
       {
         "name": "User",
