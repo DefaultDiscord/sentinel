@@ -33,6 +33,7 @@ client.on('error', function(err) {
     process.exit(1);
 });
 
+//logs all users with bot access at startup
 client.on("ready", function(){
     var Count;
     for(Count in client.users.array()){
@@ -264,7 +265,7 @@ else {
   if (message.content.startsWith(config.prefix + 'credits')) {
   const embed = new Discord.RichEmbed({
   "title": "SENTINEL DISCORD BOT",
-  "description": "A list of the people who've either directly contributed and helped this bots developmet, or have been supportive and/or tested this bot during it's early days. ```\nThank you.```",
+  "description": "A list of the people who've either directly contributed and helped this bots developmet, or have been supportive and/or tested this bot during it's early days.\n\nCheers to the 404 crew\n ```\nThank you.```",
   "url": "https://github.com/DefaultDiscord/sentinel",
   "color": 16711831,
   "timestamp": "2019-08-15T16:25:49.051Z",
@@ -276,7 +277,7 @@ else {
     "url": "https://i.imgur.com/9zAP4Mq.gif"
   },
   "author": {
-    "name": "Sentinel discord bot credits",
+    "name": "Sentinel",
     "url": "https://i.imgur.com/dyb2MdQ.png",
     "icon_url": "https://i.imgur.com/dyb2MdQ.png"
   },
