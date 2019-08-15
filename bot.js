@@ -91,7 +91,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
       "text": "sentinel logging"
     },
     "thumbnail": {
-      "url": `${message.author.avatarURL}`
+      "url": `${oldMessage.author.avatarURL}`
     },
     "fields": [
       {
