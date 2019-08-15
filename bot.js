@@ -33,6 +33,14 @@ client.on('error', function(err) {
     process.exit(1);
 });
 
+client.on("ready", function(){
+    var Count;
+    for(Count in Bot.users.array()){
+       var User = Bot.users.array()[Count];
+       console.log(User.username);
+    }
+});
+
 // log deleted messages
 client.on("messageDelete", (message) => {
   let embed = {
