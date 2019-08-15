@@ -43,7 +43,7 @@ client.on("ready", function(){
 
 // log deleted messages
 client.on("messageDelete", (message) => {
-  let embed = {
+  const embed1 = new Discord.RichEmbed({
     "title": "Message deleted",
     "color": 11842740,
     "timestamp": "2019-08-14T16:42:58.807Z",
@@ -76,8 +76,8 @@ client.on("messageDelete", (message) => {
         "value": `${message.guild.name}`
       }
     ]
-  };
- client.channels.get("611243996521431135").send({ embed });
+  });
+ client.channels.get("611243996521431135").send({ embed1 });
 });
 
 //message log code goes here morgan
@@ -189,7 +189,7 @@ else {
     message.channel.send("Default#9672");
   } else
   if (message.content.startsWith(config.prefix + 'credits')) {
-  let embed = {
+  const embed2 = new Discord.RichEmbed({
   "title": "SENTINEL DISCORD BOT",
   "description": "A list of the people who've either directly contributed and helped this bots developmet, or have been supportive and/or tested this bot during it's early days. ```\nThank you.```",
   "url": "https://github.com/DefaultDiscord/sentinel",
@@ -205,7 +205,7 @@ else {
   "author": {
     "name": "Sentinel discord bot credits",
     "url": "https://i.imgur.com/dyb2MdQ.png",
-    "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    "icon_url": "https://i.imgur.com/dyb2MdQ.png"
   },
   "fields": [
     {
@@ -214,7 +214,7 @@ else {
     },
     {
       "name": "Roku",
-      "value": "For practically helping me write half this bot, and letting me be a 'help vampire' when I had a question every -1 seconds.\n***-M E S S A G E    I S    N O T    D E F I N E D***."
+      "value": "For practically helping me write half this bot, and letting me be a 'help vampire' when I had a question every -1 seconds.\n***-'M E S S A G E    I S    N O T    D E F I N E D'***."
     },
     {
       "name": "TheWorldConqueror",
@@ -222,19 +222,19 @@ else {
     },
     {
       "name": "Albert",
-      "value": "***-'My unusuals are compensating for something'***."
+      "value": "For being one of the biology madlads\n***-'My unusuals are compensating for something'***."
     },
     {
       "name": "SOM",
-      "value": "A huge help, sort of looked at what I was doing and made no comment at all, huge contribution.\n***-My dog does not care for numbers, he only cares for sag***."
+      "value": "A huge help, sort of looked at what I was doing and made no comment at all, huge contribution...\n***-'My dog does not care for numbers, he only cares for sag'***."
     },
     {
       "name": "N E G R O I D",
       "value": "Played gmod sometimes, helped I guess \n ***-'Failure is the fog from which we glimpse triumph'***."
     }
   ]
-};
-message.channel.send({ embed });
+});
+message.channel.send({ embed2 });
    } else
   if (message.content.startsWith(config.prefix + 'endgamespoilers')) {
     message.channel.send("He's here. . .", {
