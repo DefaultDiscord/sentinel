@@ -52,7 +52,7 @@ client.on("messageDelete", (message) => {
       "text": "sentinel logging"
     },
     "thumbnail": {
-      "url": "https://i.imgur.com/dyb2MdQ.png"
+      "url": `${message.author.avatarURL}`
     },
     "fields": [
       {
@@ -91,7 +91,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
       "text": "sentinel logging"
     },
     "thumbnail": {
-      "url": "https://i.imgur.com/dyb2MdQ.png"
+      "url": `${message.author.avatarURL}`
     },
     "fields": [
       {
