@@ -189,45 +189,52 @@ else {
     message.channel.send("Default#9672");
   } else
   if (message.content.startsWith(config.prefix + 'credits')) {
-      let embed_credits = {
-        "title": "Sentinel discord bot credits",
-        "color": 16711831,
-        "timestamp": "2019-08-14T16:42:58.807Z",
-        "footer": {
-          "icon_url": "https://i.imgur.com/dyb2MdQ.png",
-          "text": "sentinel"
-        },
-        "thumbnail": {
-          "url": "https://i.imgur.com/9zAP4Mq.gif"
-        },
-        "fields": [
-          {
-            "name": "Default",
-            "value": "The stupid idiot who thought it was a good idea to make a discord bot with no prior javascript knowledge."
-          },
-          {
-            "name": "Roku",
-            "value": "For practically helping me write half this bot, and letting me be a 'help vampire' when I had a question every -1 seconds."
-          },
-          {
-            "name": "TheWorldConqueror",
-            "value": "For typing and deleting a message that one time \n -'Well i'v done nothing, so I need nothing'."
-          },
-          {
-            "name": "Albert",
-            "value": "-'My unusuals are compensating for something'."
-          },
-          {
-            "name": "SOM",
-            "value": "A huge help, sort of looked at what I was doing and made no comment at all, huge contribution."
-          },
-          {
-            "name": "N E G R O I D",
-            "value": "..."
-          }
-        ]
-      };
-     message.channel.send({ embed_credits });
+  let embed_credits = {
+  "title": "SENTINEL DISCORD BOT",
+  "description": "A list of the people who've either directly contributed and helped this bots developmet, or have been supportive and/or tested this bot during it's early days. ```\nThank you.```",
+  "url": "https://github.com/DefaultDiscord/sentinel",
+  "color": 16711831,
+  "timestamp": "2019-08-15T16:25:49.051Z",
+  "footer": {
+    "icon_url": "https://i.imgur.com/dyb2MdQ.png",
+    "text": "SENTINEL"
+  },
+  "thumbnail": {
+    "url": "https://i.imgur.com/9zAP4Mq.gif"
+  },
+  "author": {
+    "name": "Sentinel discord bot credits",
+    "url": "https://i.imgur.com/dyb2MdQ.png",
+    "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+  },
+  "fields": [
+    {
+      "name": "Default",
+      "value": "The stupid idiot who thought it was a good idea to make a discord bot with no prior javascript knowledge.\n***-Help***."
+    },
+    {
+      "name": "Roku",
+      "value": "For practically helping me write half this bot, and letting me be a 'help vampire' when I had a question every -1 seconds.\n***-M E S S A G E    I S    N O T    D E F I N E D***."
+    },
+    {
+      "name": "TheWorldConqueror",
+      "value": "For typing and deleting a message that one time \n ***-'Well i'v done nothing, so I need nothing'***."
+    },
+    {
+      "name": "Albert",
+      "value": "***-'My unusuals are compensating for something'***."
+    },
+    {
+      "name": "SOM",
+      "value": "A huge help, sort of looked at what I was doing and made no comment at all, huge contribution.\n***-My dog does not care for numbers, he only cares for sag***."
+    },
+    {
+      "name": "N E G R O I D",
+      "value": "Played gmod sometimes, helped I guess \n ***-'Failure is the fog from which we glimpse triumph'***."
+    }
+  ]
+};
+channel.send({ embed_credits });
    } else
   if (message.content.startsWith(config.prefix + 'endgamespoilers')) {
     message.channel.send("He's here. . .", {
