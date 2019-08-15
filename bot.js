@@ -123,7 +123,37 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
  client.channels.get("611243996521431135").send({ embed });
 });
 
-//message log code goes here morgan
+// log user left or kicked
+client.on("guildMemberRemove", (members) => {
+  const embed = new Discord.RichEmbed({
+    "title": "User left",
+    "color": 13696768,
+    "timestamp": "2019-08-14T16:42:58.807Z",
+    "footer": {
+      "icon_url": "https://i.imgur.com/dyb2MdQ.png",
+      "text": "sentinel logging"
+    },
+    "thumbnail": {
+      "url": `${message.author.avatarURL}`
+    },
+    "fields": [
+      {
+        "name": "Date/time",
+        "value": `${new Date()}`
+      },
+      {
+        "name": "User",
+        "value": `${message.tag}`
+      },
+      {
+        "name": "Guild",
+        "value": `${message.guild.name}`
+      }
+    ]
+  });
+ client.channels.get("611243996521431135").send({ embed });
+});
+
 
 client.on("message", (message) => {
 
