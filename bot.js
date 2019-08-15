@@ -134,7 +134,7 @@ client.on("guildMemberRemove", (message) => {
       "text": "sentinel logging"
     },
     "thumbnail": {
-      "url": `${message.author.avatarURL}`
+      "url": `${member.avatarURL}`
     },
     "fields": [
       {
