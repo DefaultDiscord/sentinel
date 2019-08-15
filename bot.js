@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json")
 const token = process.env.token;
-const dev_ids = config.ownerID;
+const dev_ids = config.ownerID || config.co_ownerID;
 var Game = 'everyone'
 var Type = 'Watching'
 
