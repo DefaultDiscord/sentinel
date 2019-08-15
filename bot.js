@@ -80,6 +80,49 @@ client.on("messageDelete", (message) => {
  client.channels.get("611243996521431135").send({ embed });
 });
 
+// log edited messages
+client.on("messageUpdate", (oldMessage, newMessage) => {
+  const embed = new Discord.RichEmbed({
+    "title": "Message edited",
+    "color": 16119285,
+    "timestamp": "2019-08-14T16:42:58.807Z",
+    "footer": {
+      "icon_url": "https://i.imgur.com/dyb2MdQ.png",
+      "text": "sentinel logging"
+    },
+    "thumbnail": {
+      "url": `${oldMessage.author.avatarURL}`
+    },
+    "fields": [
+      {
+        "name": "Initial message content",
+        "value": `${oldMessage.content}`
+      },
+      {
+        "name": "New message content",
+        "value": `${newMessage.content}`
+      },
+      {
+        "name": "Date/time",
+        "value": `${new Date()}`
+      },
+      {
+        "name": "User",
+        "value": `${oldMessage.author.tag}`
+      },
+      {
+        "name": "Channel",
+        "value": `${oldMessage.channel.name}`
+      },
+      {
+        "name": "Guild",
+        "value": `${oldMessage.guild.name}`
+      }
+    ]
+  };
+ client.channels.get("611243996521431135").send({ embed });
+});
+
 //message log code goes here morgan
 
 client.on("message", (message) => {
