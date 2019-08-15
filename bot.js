@@ -45,7 +45,7 @@ client.on("ready", function(){
 client.on("messageDelete", (message) => {
   const embed = new Discord.RichEmbed({
     "title": "Message deleted",
-    "color": 11842740,
+    "color": 921102,
     "timestamp": "2019-08-14T16:42:58.807Z",
     "footer": {
       "icon_url": "https://i.imgur.com/dyb2MdQ.png",
