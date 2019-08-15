@@ -124,7 +124,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
 });
 
 // log user left or kicked
-client.on("guildMemberRemove", (message, guild, user) => {
+client.on("guildMemberRemove", (message, guild, user, member) => {
   const embed = new Discord.RichEmbed({
     "title": "User left",
     "color": 13696768,
@@ -143,7 +143,7 @@ client.on("guildMemberRemove", (message, guild, user) => {
       },
       {
         "name": "User",
-        "value": `${message.author.tag}`
+        "value": `${member.tag}`
       },
       {
         "name": "Guild",
