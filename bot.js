@@ -234,7 +234,7 @@ else {
     }
   ]
 };
-channel.send({ embed_credits });
+message.channel.send({ embed_credits });
    } else
   if (message.content.startsWith(config.prefix + 'endgamespoilers')) {
     message.channel.send("He's here. . .", {
