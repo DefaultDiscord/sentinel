@@ -143,7 +143,7 @@ client.on("guildMemberRemove", (message) => {
       },
       {
         "name": "User",
-        "value": `${message.tag}`
+        "value": `${member.tag}`
       },
       {
         "name": "Guild",
