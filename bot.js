@@ -108,7 +108,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
       },
       {
         "name": "User",
-        "value": `${oldMessage.author.tag}`
+        "value": "Morgan you need to replace me asap you fucking moron"
       },
       {
         "name": "Channel",
