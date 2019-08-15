@@ -52,7 +52,7 @@ client.on("messageDelete", (message) => {
       "text": "sentinel logging"
     },
     "thumbnail": {
-      "url": `${message.author.avatarURL}`
+      "url": `${author.avatarURL}`
     },
     "fields": [
       {
