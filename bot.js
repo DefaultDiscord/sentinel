@@ -108,7 +108,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
       },
       {
         "name": "User",
-        "value": "Morgan you need to replace me asap you fucking moron"
+        "value": `${oldMessage.author.tag}`
       },
       {
         "name": "Channel",
@@ -143,7 +143,7 @@ client.on("guildMemberRemove", (message, guild, user, member, tag) => {
       },
       {
         "name": "User",
-        "value": `${member.tag}`
+        "value": "Morgan you need to replace me asap you fucking moron"
       },
       {
         "name": "Guild",
