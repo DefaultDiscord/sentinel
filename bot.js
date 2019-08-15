@@ -210,7 +210,7 @@ else {
   "fields": [
     {
       "name": "Default",
-      "value": "The stupid idiot who thought it was a good idea to make a discord bot with no prior javascript knowledge.\n***-Help***."
+      "value": "The stupid idiot who thought it was a good idea to make a discord bot with no prior javascript knowledge.\n***-'Help'***."
     },
     {
       "name": "Roku",
