@@ -189,7 +189,7 @@ else {
     message.channel.send("Default#9672");
   } else
   if (message.content.startsWith(config.prefix + 'credits')) {
-  let embed_credits = {
+  let embed = {
   "title": "SENTINEL DISCORD BOT",
   "description": "A list of the people who've either directly contributed and helped this bots developmet, or have been supportive and/or tested this bot during it's early days. ```\nThank you.```",
   "url": "https://github.com/DefaultDiscord/sentinel",
@@ -234,7 +234,7 @@ else {
     }
   ]
 };
-message.channel.send({ embed_credits });
+message.channel.send({ embed });
    } else
   if (message.content.startsWith(config.prefix + 'endgamespoilers')) {
     message.channel.send("He's here. . .", {
