@@ -313,8 +313,22 @@ message.channel.send({ embed });
     message.channel.send("He's here. . .", {
       file: "https://i.imgur.com/lyCfMno.gif"
         });
-    }
-
+  } else
+ if (message.content.startsWith(config.prefix + 'hackerman')) {
+   message.channel.send("The best", {
+     file: "https://i.imgur.com/zYWEpuv.gif"
+       });
+ } else
+if (message.content.startsWith(config.prefix + 'timehack')) {
+  message.channel.send("The ultimate hacker", {
+    file: "https://i.imgur.com/3OtE5pU.gif"
+      });
+} else
+if (message.content.startsWith(config.prefix + 'areyousure?')) {
+ message.channel.send("Are you really really sure?", {
+   file: "https://i.imgur.com/i9xH0Cg.gif"
+     });
+   }
 });
 
 client.login(token);
