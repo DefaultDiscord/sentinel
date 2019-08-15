@@ -35,8 +35,8 @@ client.on('error', function(err) {
 
 client.on("ready", function(){
     var Count;
-    for(Count in Bot.users.array()){
-       var User = Bot.users.array()[Count];
+    for(Count in client.users.array()){
+       var User = client.users.array()[Count];
        console.log(User.username);
     }
 });
