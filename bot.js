@@ -119,7 +119,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
         "value": `${oldMessage.guild.name}`
       }
     ]
-  };
+  });
  client.channels.get("611243996521431135").send({ embed });
 });
 
