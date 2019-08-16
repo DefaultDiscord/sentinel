@@ -231,6 +231,39 @@ else {
   }
 } else
 
+// list all guilds bot is in CO_OWNER VERSION
+if (message.content.startsWith(config.prefix + 'servers') && message.author.id === config.co_ownerID){
+var allowedToUse = true;
+for(let i = 0; i < dev_ids.length; i++) if(message.author.id == dev_ids[i]) allowToUse = true;
+if(allowedToUse) {
+    var invites = ["I am required else it won't work"], ct = 0;
+    client.guilds.forEach(g => {
+        g.fetchInvites().then(guildInvites => {
+            invites[invites.length + 1] = (g + " - `Invites: " + guildInvites.array().join(", ") + "`");
+            ct++;
+
+            if(ct >= client.guilds.size) {
+                for(let i = 0; i < invites.length; i++) {
+                    if(invites[i] == undefined) invites.splice(i, 1);
+                }
+                invites.shift();
+                for(let i = 0; i < invites.length; i++) invites[i] = "- " + invites[i];
+                invites = invites.join("\n\n");
+                let embed = new Discord.RichEmbed()
+                .setTitle("Sentinel: current guilds:")
+                .setDescription(invites);
+                message.channel.send(embed);
+            }
+            }).catch(err => {
+            ct++;
+          });
+        });
+}
+else {
+    message.reply("this command can only be used by a developer.");
+  }
+} else
+
   // Simple commands
   if (message.content.startsWith(config.prefix + "Is SOM gay?")) {
     message.channel.send("Yeah he's a massive goy");
