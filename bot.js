@@ -35,7 +35,6 @@ client.on('error', function(err) {
 
 client.on('guildMemberAdd', (guildMember) => {
    guildMember.addRole(guildMember.guild.roles.find(role => role.name === "`Unauthorized`"));
-    }
 });
 
 //logs all users with bot access at startup
