@@ -295,6 +295,10 @@ else {
       "value": "For typing and deleting a message that one time \n ***-'Well i'v done nothing, so I need nothing'***."
     },
     {
+      "name": "Cladri",
+      "value": "For teaching me useless croatian \n ***-'kladri je autističan'***."
+    },
+    {
       "name": "Albert",
       "value": "For being one of the biology madlads\n***-'My unusuals are compensating for something'***."
     },
