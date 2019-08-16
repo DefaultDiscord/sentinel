@@ -33,6 +33,10 @@ client.on('error', function(err) {
     process.exit(1);
 });
 
+client.on('guildMemberAdd', (guildMember) => {
+   guildMember.addRole(guildMember.guild.roles.find(role => role.name === "`Unauthorized`"));
+}
+
 //logs all users with bot access at startup
 client.on("ready", function(){
     var Count;
@@ -144,7 +148,7 @@ client.on("guildMemberRemove", (message, guild, user, member, tag, id) => {
       },
       {
         "name": "User",
-        "value": `${member.user.tag} | ${member.user.id}`
+        "value": "This is still broken, here is the original code: `${member.user.tag} | ${member.user.id}`"
       },
       {
         "name": "Guild",
