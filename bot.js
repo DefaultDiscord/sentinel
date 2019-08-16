@@ -259,6 +259,9 @@ else {
   if (message.content.startsWith(config.prefix + "Is Albert gay?")) {
     message.channel.send("no, but his unusuals collection is MASSIVE BRUV");
   } else
+  if (message.content.startsWith(config.prefix + "Is Joint gay?")) {
+    message.channel.send("Massive gay and will grow up to be a school shooter, should be euthanized ASAP");
+  } else
   if (message.content.startsWith(config.prefix + 'owners') && message.author.id === config.ownerID){
     message.channel.send("***Default#9672 & The World Conqueror#5601***");
   } else
