@@ -82,7 +82,7 @@ client.on("messageDelete", (message) => {
       }
     ]
   });
- client.channels.get("611243996521431135").send({ embed });
+ client.channels.get("612040963690594314").send({ embed });
 });
 
 // log edited messages
@@ -125,7 +125,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
       }
     ]
   });
- client.channels.get("611243996521431135").send({ embed });
+ client.channels.get("612040963690594314").send({ embed });
 });
 
 // log user left or kicked
@@ -156,7 +156,7 @@ client.on("guildMemberRemove", (message, guild, user, member, tag, id) => {
       }
     ]
   });
- client.channels.get("611243996521431135").send({ embed });
+ client.channels.get("612040963690594314").send({ embed });
 });
 
 
