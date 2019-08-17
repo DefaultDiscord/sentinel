@@ -87,7 +87,6 @@ client.on("messageDelete", (message) => {
 
 // log deleted messages CLADRI SERVER
 client.on("messageDelete", (message) => {
-  if (message.guild.id == ('515955729077764096'));
   const embed = new Discord.RichEmbed({
     "title": "Message deleted",
     "color": 921102,
@@ -122,12 +121,12 @@ client.on("messageDelete", (message) => {
       }
     ]
   });
+ if (message.guild.id == ('515955729077764096'));
  client.channels.get("612313786275332109").send({ embed });
 });
 
 // log edited messages CLADRI SERVER
 client.on("messageUpdate", (oldMessage, newMessage) => {
-  if (message.guild.id == ('515955729077764096'));
   const embed = new Discord.RichEmbed({
     "title": "Message edited",
     "color": 16119285,
@@ -166,6 +165,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
       }
     ]
   });
+ if (message.guild.id == ('515955729077764096'));
  client.channels.get("612313786275332109").send({ embed });
 });
 
