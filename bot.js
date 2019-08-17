@@ -86,8 +86,8 @@ client.on("messageDelete", (message) => {
 });
 
 // log deleted messages CLADRI SERVER
+if (message.guild.id == ("515955729077764096"));
 client.on("messageDelete", (message) => {
-  if (message.guild.id == ("515955729077764096"));
   const embed = new Discord.RichEmbed({
     "title": "Message deleted",
     "color": 921102,
