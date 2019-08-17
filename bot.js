@@ -47,7 +47,7 @@ client.on("ready", function(){
 });
 
 // log deleted messages MASTER
-client.on("messageDelete", (message) => {
+client.on("messageDelete", "message", (message) => {
   const embed = new Discord.RichEmbed({
     "title": "Message deleted",
     "color": 921102,
@@ -86,7 +86,7 @@ client.on("messageDelete", (message) => {
 });
 
 // log edited messages MASTER
-client.on("messageUpdate", (oldMessage, newMessage) => {
+client.on("messageUpdate", "message" (oldMessage, newMessage) => {
   const embed = new Discord.RichEmbed({
     "title": "Message edited",
     "color": 16119285,
