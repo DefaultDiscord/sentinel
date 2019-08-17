@@ -164,7 +164,7 @@ client.on("messageDelete", (message) => {
       }
     ]
   });
- if (message.guild.id == '515955729077764096');
+ if (client.guild.id == '515955729077764096');
  client.channels.get("612040963690594314").send({ embed });
 });
 
@@ -208,7 +208,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
       }
     ]
   });
-   if (message.guild.id == '515955729077764096');
+   if (client.guild.id == '515955729077764096');
  client.channels.get("612040963690594314").send({ embed });
 });
 
