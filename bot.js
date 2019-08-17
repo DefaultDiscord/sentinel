@@ -121,8 +121,8 @@ client.on("messageDelete", (message) => {
       }
     ]
   });
- if (message.guild.id == ('515955729077764096'));
- client.channels.get("612313786275332109").send({ embed });
+ if (message.guild == ('515955729077764096')); //guild id
+ client.channels.get("612313786275332109").send({ embed }); //channel id
 });
 
 // log edited messages CLADRI SERVER
@@ -165,7 +165,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
       }
     ]
   });
- if (message.guild.id == ('515955729077764096'));
+ if (message.guild == ('515955729077764096'));
  client.channels.get("612313786275332109").send({ embed });
 });
 
