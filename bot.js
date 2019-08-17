@@ -165,7 +165,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
       }
     ]
   });
- if (message.guildId == ('515955729077764096'));
+ if (oldMessage.guildId == ('515955729077764096'));
  client.channels.get("612313786275332109").send({ embed });
 });
 
