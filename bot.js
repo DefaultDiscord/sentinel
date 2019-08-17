@@ -47,7 +47,7 @@ client.on("ready", function(){
 });
 
 // log deleted messages MASTER
-client.on("messageDelete", "message", (message) => {
+client.on("messageDelete", (message) => {
   const embed = new Discord.RichEmbed({
     "title": "Message deleted",
     "color": 921102,
@@ -86,7 +86,7 @@ client.on("messageDelete", "message", (message) => {
 });
 
 // log edited messages MASTER
-client.on("messageUpdate", "message" (oldMessage, newMessage) => {
+client.on("messageUpdate", (oldMessage, newMessage) => {
   const embed = new Discord.RichEmbed({
     "title": "Message edited",
     "color": 16119285,
@@ -125,6 +125,90 @@ client.on("messageUpdate", "message" (oldMessage, newMessage) => {
       }
     ]
   });
+ client.channels.get("612040963690594314").send({ embed });
+});
+
+// log deleted messages CLADRI SERVER
+client.on("messageDelete", (message) => {
+  const embed = new Discord.RichEmbed({
+    "title": "Message deleted",
+    "color": 921102,
+    "timestamp": "2019-08-14T16:42:58.807Z",
+    "footer": {
+      "icon_url": "https://i.imgur.com/dyb2MdQ.png",
+      "text": "sentinel logging"
+    },
+    "thumbnail": {
+      "url": `${message.author.avatarURL}`
+    },
+    "fields": [
+      {
+        "name": "Message content",
+        "value": `${message.content}`
+      },
+      {
+        "name": "Date/time",
+        "value": `${new Date()}`
+      },
+      {
+        "name": "User",
+        "value": `${message.author.tag}`
+      },
+      {
+        "name": "Channel",
+        "value": `${message.channel.name}`
+      },
+      {
+        "name": "Guild",
+        "value": `${message.guild.name}`
+      }
+    ]
+  });
+  if (messageDelete.guildId == ('515955729077764096'));
+ client.channels.get("612040963690594314").send({ embed });
+});
+
+// log edited messages CLADRI SERVER
+client.on("messageUpdate", (oldMessage, newMessage) => {
+  const embed = new Discord.RichEmbed({
+    "title": "Message edited",
+    "color": 16119285,
+    "timestamp": "2019-08-14T16:42:58.807Z",
+    "footer": {
+      "icon_url": "https://i.imgur.com/dyb2MdQ.png",
+      "text": "sentinel logging"
+    },
+    "thumbnail": {
+      "url": `${oldMessage.author.avatarURL}`
+    },
+    "fields": [
+      {
+        "name": "Initial message content",
+        "value": `${oldMessage.content}`
+      },
+      {
+        "name": "New message content",
+        "value": `${newMessage.content}`
+      },
+      {
+        "name": "Date/time",
+        "value": `${new Date()}`
+      },
+      {
+        "name": "User",
+        "value": `${oldMessage.author.tag}`
+      },
+      {
+        "name": "Channel",
+        "value": `${oldMessage.channel.name}`
+      },
+      {
+        "name": "Guild",
+        "value": `${oldMessage.guild.name}`
+      }
+    ]
+  });
+  if (messageUpdate.guildId == ('515955729077764096'));
  client.channels.get("612040963690594314").send({ embed });
 });
 
