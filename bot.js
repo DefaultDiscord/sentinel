@@ -315,6 +315,12 @@ else {
   if (message.content.startsWith(config.prefix + "Is Default gay?")) {
     message.channel.send("no");
   } else
+  if (message.content.startsWith(config.prefix + "Is Ben gay?")) {
+    message.channel.send("Yes, he also is obese and molests cats");
+  } else
+  if (message.content.startsWith(config.prefix + "Is Ewan gay?")) {
+    message.channel.send("Yeah he likes that gay hentai shit");
+  } else
   if (message.content.startsWith(config.prefix + "Is Albert gay?")) {
     message.channel.send("no, but his unusuals collection is MASSIVE BRUV");
   } else
