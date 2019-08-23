@@ -294,6 +294,9 @@ else {
   if (message.content.startsWith(config.prefix + "Is SOM gay?")) {
     message.channel.send("Yeah he's a massive goy");
   } else
+  if (message.content.startsWith(config.prefix + "Is Carpie gay?")) {
+    message.channel.send("yes he big gay lol");
+  } else
   if (message.content.startsWith(config.prefix + "Is Bellmander gay?")) {
     message.channel.send("100% cock addict");
   } else
