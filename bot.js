@@ -180,11 +180,6 @@ client.on("message", (message) => {
     message.channel.send(avatarEmbed);
   } else
 
-  // user mention testing
-  if (message.content.startsWith(config.prefix + 'clienttest01')) {
-    message.channel.send("<@!" + userID + ">");
-  } else
-
   // Administration rights redundancy
   if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.ownerID){
   let me = message.author
@@ -331,6 +326,9 @@ else {
   } else
   if (message.content.startsWith(config.prefix + "Is Albert gay?")) {
     message.channel.send("no, but his unusuals collection is MASSIVE BRUV");
+  } else
+  if (message.content.startusWith(config.prefix + "userinfo")) {
+    message.channel.send('Your username: ${message.author.username}\nYour UID: $message.author.id');
   } else
   if (message.content.startsWith(config.prefix + "Is Joint gay?")) {
     message.channel.send("Massive gay and will grow up to be a school shooter, should be euthanized ASAP");
