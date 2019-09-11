@@ -180,6 +180,11 @@ client.on("message", (message) => {
     message.channel.send(avatarEmbed);
   } else
 
+  // user mention testing
+  if (message.content.startsWith(config.prefix + 'clienttest01')) {
+    message.channel.send("<@!" + userID + ">");
+  } else
+
   // Administration rights redundancy
   if (message.content.startsWith(config.prefix + 'sysac') && message.author.id === config.ownerID){
   let me = message.author
