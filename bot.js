@@ -327,7 +327,7 @@ else {
   if (message.content.startsWith(config.prefix + "Is Albert gay?")) {
     message.channel.send("no, but his unusuals collection is MASSIVE BRUV");
   } else
-  if (message.content.startusWith(config.prefix + "userinfo")) {
+  if (message.content.startsWith(config.prefix + "userinfo")) {
     message.channel.send('Your username: ${message.author.username}\nYour UID: $message.author.id');
   } else
   if (message.content.startsWith(config.prefix + "Is Joint gay?")) {
