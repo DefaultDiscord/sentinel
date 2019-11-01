@@ -413,12 +413,12 @@ message.channel.send({ embed });
        });
  } else
  if (message.content.startsWith(config.prefix + 'snapped')) {
-   message.channel.send("The best", {
+   message.channel.send("I am inevitable", {
      file: "https://i.imgur.com/9jhHKzt.gif"
        });
  } else
 if (message.content.startsWith(config.prefix + 'whereisbmojiserver?')) {
-   message.channel.send("The best", {
+   message.channel.send("Gone, reduced to atoms. ", {
      file: "https://i.imgur.com/uSdAR7L.png"
        });
  } else
