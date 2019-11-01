@@ -412,6 +412,16 @@ message.channel.send({ embed });
      file: "https://i.imgur.com/zYWEpuv.gif"
        });
  } else
+ if (message.content.startsWith(config.prefix + 'snapped')) {
+   message.channel.send("The best", {
+     file: "https://i.imgur.com/9jhHKzt.gif"
+       });
+ } else
+if (message.content.startsWith(config.prefix + 'whereisbmojiserver?')) {
+   message.channel.send("The best", {
+     file: "https://i.imgur.com/uSdAR7L.png"
+       });
+ } else
 if (message.content.startsWith(config.prefix + 'timehack')) {
   message.channel.send("The ultimate hacker", {
     file: "https://i.imgur.com/3OtE5pU.gif"
