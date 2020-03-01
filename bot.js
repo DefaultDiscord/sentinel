@@ -344,6 +344,9 @@ else {
   if (message.content.startsWith(config.prefix + "Is Dan gay?")) {
     message.channel.send("Cum guzzler supreme");
   } else
+  if (message.content.startsWith(config.prefix + "Whome Jayden")) {
+    message.channel.send("Big nonce who grooms children");
+  } else
   if (message.content.startsWith(config.prefix + 'owners') && message.author.id === config.ownerID){
     message.channel.send("***Default#9672 & The World Conqueror#5601***");
   } else
