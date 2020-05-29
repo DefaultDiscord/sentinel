@@ -341,6 +341,9 @@ else {
   if (message.content.startsWith(config.prefix + "Is Joint gay?")) {
     message.channel.send("Massive gay and will grow up to be a school shooter, should be euthanized ASAP");
   } else
+  if (message.content.startsWith(config.prefix + "Is Jay gay?")) {
+    message.channel.send("jay=gay™️");
+  } else
   if (message.content.startsWith(config.prefix + "Is Dan gay?")) {
     message.channel.send("Cum guzzler supreme");
   } else
