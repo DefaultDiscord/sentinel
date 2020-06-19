@@ -359,6 +359,12 @@ else {
   if (message.content.startsWith(config.prefix + "What is PA?")) {
     message.channel.send("Penis Ass (/ˈpiːnɪs - as/) (noun)");
   } else
+  if (message.content.startsWith(config.prefix + "Is John gay?")) {
+    message.channel.send("fat");
+  } else
+  if (message.content.startsWith(config.prefix + "Is M3RK gay?")) {
+    message.channel.send("giga gay, likes feet");
+  } else
   if (message.content.startsWith(config.prefix + 'owners') && message.author.id === config.ownerID){
     message.channel.send("***Default#9672 & The World Conqueror#5601***");
   } else
